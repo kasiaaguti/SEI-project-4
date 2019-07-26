@@ -1,5 +1,8 @@
 from flask import Blueprint, jsonify, request
 from models.company import Company, CompanySchema, Comment, CommentSchema
+from lib.secure_route import secure_route
+
+
 
 api = Blueprint('companies', __name__)
 company_schema = CompanySchema()
@@ -18,6 +21,7 @@ def show(company_id):
     return company_schema.jsonify(company), 200
 
 @api.route('/companies', methods=['POST'])
+@secure_route
 def create():
     data = request.get_json()
     company, errors = company_schema.load(data)
@@ -27,6 +31,7 @@ def create():
     return company_schema.jsonify(company), 201
 
 @api.route('/companies/<int:company_id>', methods=['PUT'])
+@secure_route
 def update(company_id):
     company = Company.query.get(company_id)
     if not company:
@@ -39,6 +44,7 @@ def update(company_id):
     return company_schema.jsonify(company), 202
 
 @api.route('/companies/<int:company_id>', methods=['DELETE'])
+@secure_route
 def delete(company_id):
     company = Company.query.get(company_id)
     if not company:
