@@ -30,7 +30,7 @@ def create():
     company.save()
     return company_schema.jsonify(company), 201
 
-@api.route('/companies/<int:company_id>', methods=['PUT'])
+@api.route('/companies/<int:company_id>/edit', methods=['PUT'])
 @secure_route
 def update(company_id):
     company = Company.query.get(company_id)

@@ -26,9 +26,9 @@ with app.app_context():
 
 # Companies
 
-    elektrobudowa = Company(name='Elektrobudowa', address='Katowice', website='https://www.elektrobudowa.pl/pl/', image='https://www.elektrobudowa.pl/assets/pics/budynek%20elbudowa%20maly.jpg?1505325485131', profile='founded 1953', lat=50.2512621, long=19.0516174)
+    elektrobudowa = Company(name='Elektrobudowa', city='Katowice', postcode='40-246', street='Porcelanowa', number='12', website='https://www.elektrobudowa.pl/pl/', image='https://www.elektrobudowa.pl/assets/pics/budynek%20elbudowa%20maly.jpg?1505325485131', profile='founded 1953', lat=50.2512621, long=19.0516174)
 
-    zpue = Company(name='ZPUE', address='Wloszczowa', website='www.zpue.pl', image='http://elektrosystemy.pl/wp-content/uploads/aktualnosci-rynek/2016/12/07/wiceprezes-abb-moze-zostac-szefem-zpue/ZPUE_4.jpg', profile='founded 1988', lat=50.8473622, long=19.9959265, employees=[kasia],)
+    zpue = Company(name='ZPUE', city='Wloszczowa', postcode='29-100', street='Jedrzejowska', number='79c', website='www.zpue.pl', image='http://elektrosystemy.pl/wp-content/uploads/aktualnosci-rynek/2016/12/07/wiceprezes-abb-moze-zostac-szefem-zpue/ZPUE_4.jpg', profile='founded 1988', lat=50.8473622, long=19.9959265, employees=[kasia],)
 
     db.session.add_all([
         elektrobudowa,

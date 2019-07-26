@@ -17,7 +17,10 @@ class Company(db.Model, BaseModel):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(40), nullable=False, unique=True)
-    address = db.Column(db.String(300), nullable=False)
+    city = db.Column(db.String(300), nullable=False)
+    street = db.Column(db.String(300), nullable=False)
+    number = db.Column(db.String(300), nullable=False)
+    postcode = db.Column(db.String(300), nullable=False)
     website = db.Column(db.String(300), nullable=False)
     image = db.Column(db.String(300), nullable=False)
     profile = db.Column(db.String(300), nullable=False)

@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 class CompaniesShow extends React.Component {
   constructor() {
@@ -33,13 +34,18 @@ class CompaniesShow extends React.Component {
               <p>{company.website}</p>
               <p>{company.profile}</p>
               <p>{company.employees.user}</p>
-
+              <Link
+                             className="button is-warning"
+                             to={`/companies/${company.id}/edit`}
+                           >
+                             Edit
+                           </Link>
 
 
            </div>
 
 
-        
+
 
 
 
