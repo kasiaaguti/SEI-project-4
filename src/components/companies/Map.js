@@ -4,7 +4,7 @@ import MarkersMap from './MarkersMap'
 
 // mapboxgl.accessToken = process.env.MAPBOX
 
-mapboxgl.accessToken = 'pk.eyJ1Ijoia2FzaWFhZ3V0aSIsImEiOiJjanlrMHE2b2IwNjlrM2luY2I5dzluNDk5In0.lQdefpodFluw02DhzxoR0Q'
+mapboxgl.accessToken = process.env.MAPBOX
 
 class Map extends React.Component {
   constructor() {
@@ -20,6 +20,7 @@ class Map extends React.Component {
       zoom: 5,
       center: [21.0067265, 52.2319237]
     })
+    this.map.scrollZoom.disable()
 
 
     this.props.markers.map(point => {

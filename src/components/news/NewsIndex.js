@@ -31,23 +31,13 @@ class NewsIndex extends React.Component {
 
 
   render() {
+
     console.log(this.state.news)
-    if (!this.state.news) return null
-
-const { news } =  this.state
-    return (
-
-      <div>
-    {this.state.news.map(articles => <div> key={news.articles}
-       {...articles} </div>)}
-</div>
-
-
-    )
-
-
 
   }
+
+
+
 
 }
 

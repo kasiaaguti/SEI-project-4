@@ -8,7 +8,7 @@ post_schema = PostSchema()
 post_comment_schema = PostcommentSchema()
 
 
-@api.route('/posts/<int:post_id>', methods=['GET'])
+@api.route('/users/posts/<int:post_id>', methods=['GET'])
 def show(post_id):
     post = Post.query.get(post_id)
     if not post:

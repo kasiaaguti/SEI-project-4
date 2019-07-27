@@ -10,8 +10,9 @@ from .base import BaseModel, BaseSchema
 class User(db.Model, BaseModel):
 
     __tablename__ = 'users'
-
     username = db.Column(db.String(40), nullable=False, unique=True)
+    name = db.Column(db.String(40))
+    bio = db.Column(db.String(40))
     email = db.Column(db.String(128), nullable=False, unique=True)
     password_hash = db.Column(db.String(128), nullable=False)
 

@@ -14,6 +14,8 @@ with app.app_context():
 
     kasia, errors = user_schema.load({
     'username': 'kasia',
+    'name': 'kasia',
+    'bio': 'LSE',
     'email': 'kasia@email',
     'password': 'pass',
     'password_confirmation': 'pass'
