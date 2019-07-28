@@ -3,17 +3,17 @@ import axios from 'axios'
 
 
 class NewsIndex extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
 
     this.state = { news: null }
   }
+
 
   componentDidMount(){
     this.getNews()
   }
 
-  // gst the list of countries using the restcountries API and select the name, flat and latlng.
   getNews() {
     axios.get('https://newsapi.org/v2/everything?q=bitcoin&apiKey=0fc2226545f9457c99378cfe53b9a8e0',
       { headers: {
@@ -21,30 +21,108 @@ class NewsIndex extends React.Component {
       }
       })
 
-
-      .then(res => {
-        this.setState({ news: res.data })
-      })
-
-
+      .then(res => this.setState({ news: res.data },  () => console.log(this.state.news) ))
+      .catch(err => console.log(err))
   }
+
+
 
 
   render() {
 
-    console.log(this.state.news)
+
+    return  (
+      <div>
+
+        <h1>kas</h1>
+
+
+      <div>
+        {this.props.news}
+      <p>  {this.getNews()} </p> 
+
+
+
+      </div>
+
+
+      </div>
+
+
+
+
+
+
+
+    )
+
 
   }
-
 
 
 
 }
 
+
+
+
+
+
+
 export default NewsIndex
+//
+//
+//
+// componentDidMount(){
+//   axios.get('https://newsapi.org/v2/everything?q=bitcoin&apiKey=0fc2226545f9457c99378cfe53b9a8e0',
+//     { headers: {
+//       'Authorization': '0fc2226545f9457c99378cfe53b9a8e0'
+//     }
+//     })
+//
+//     .then(res => this.setState({ news: res.data },  () => console.log(this.state.news) ))
+//     .catch(err => console.log(err))
+// }
+//
+// render() {
+// const news = this.state.news
+//
+//   return  (
+//     <div>
+//
+//       <h1>kas</h1>
+//
+//     <div>
+//       {this.props.news}
+//
+//       {this.state.data.map(d => <li key={d.news}>{d.news}</li>)}
+//
+//     </div>
+//
+//
+//     </div>
+//
+//
+//
+//
+//
+//
+//
+//   )
+//
+//
+// }
+//
+//
+//
+// }
 
 
 
+
+
+// .then(res => {
+// this.setState({ news: res.data }, () => console.log(this.state.news))
 
 
 // "author": "David Murphy",

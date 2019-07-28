@@ -30,47 +30,63 @@ class Login extends React.Component {
       .catch(() => this.setState({ error: 'Invalid Credentials' }))
   }
 
+
+  // return (
+  //   <section className="section newform">
+  //     <div className="container">
+  //       <form onSubmit={this.handleSubmit}>
+  //
+  //
+  //         <h2 className="title">Register</h2>
+  //
+  //           <div className="field">
+  //             <label className="label">Name</label>
+  //             <div className="control">
+  //               <input
+  //                 className="input"
+  //                 name="name"
+  //                 placeholder="Name"
+  //                 onChange={this.handleChange}
+  //
+  //               />
+  //             </div>
+  //           </div>
+
+
   render() {
     return (
-      <main className="section-newform">
-        <div className="new-form">
+      <main className="section newform">
+        <div className="container">
           <form onSubmit={this.handleSubmit}>
-            <h2 className="register-title">Login For Your Account</h2>
-            <div className="wrapper">
-              <div className="wrapper-2">
-                <div className="control has-icons-right">
+
+            <h2 className="title">Login For Your Account</h2>
+
+            <div className="field">
+               <label className="label">Email</label>
+                 <div className="control">
                   <input
-                    id="input"
-                    className={`input-text2 ${this.state.error ? 'is-danger' : ''}`}
+                    className={`input ${this.state.error ? 'is-danger' : ''}`}
                     name="email"
                     placeholder="Email"
                     onChange={this.handleChange}
                   />
-                  <label htmlFor="input" className="input-label">Email</label>
-                  <span className="icon is-small is-right">
-                    <i className="fas fa-envelope"></i>
-                  </span>
-                </div>
               </div>
             </div>
 
-            <div className="wrapper">
-              <div className="wrapper-2">
-                <div className="control has-icons-right">
+
+                <div className="field">
+                  <label className="label">Password</label>
+                  <div className="control">
                   <input
                     id="input"
-                    className={`input-text2 ${this.state.error ? 'is-danger' : ''}`}
+                    className={`input ${this.state.error ? 'is-danger' : ''}`}
                     type="password"
                     name="password"
                     placeholder="Password"
                     onChange={this.handleChange}
                   />
-                  <label className="input-label">Password</label>
-                  <span className="icon is-small is-right">
-                    <i className="fas fa-lock"></i>
-                  </span>
-                </div>
               </div>
+
               {this.state.error && <small className="help is-danger">{this.state.error}</small>}
             </div>
             <button type="submit" className="button">Login</button>

@@ -21,26 +21,32 @@ class ProfilesShow extends React.Component {
 
     return (
       <main className="section">
-        <div className="container">
-          <h2 className="title">{user.name}</h2>
-          <hr />
-          <div className="columns">
 
-            <div className="column is-half">
-              <h4 className="title is-4">works at</h4>
-              <p>{user.bio}</p>
+          <div className="container">
+            <h2 className="title">{user.name}</h2>
+            <hr />
+            <div className="columns">
+              <div className="column is-half">
+                <figure className="image user-img">
+                  <img src={user.image} alt={user.name} />
+                </figure>
+                <br />
+
+                <h4 className="title is-4">About me</h4>
+                <p>{user.bio}</p>
+                <br />
+
+                <h4 className="title is-4">I work at</h4>
 
 
+              </div>
+              <div className="column is-half">
 
-           </div>
+<p>posts here</p>
 
-
-
-
-
-
+                </div>
+              </div>
             </div>
-          </div>
 
 
 

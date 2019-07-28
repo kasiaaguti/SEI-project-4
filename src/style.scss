@@ -69,3 +69,35 @@ max-width: 80%;
     margin: 2% 20%;
     background-color: rgba(63, 123, 191, 0.3);
   }
+
+  .user-img {
+    height: 200px;
+    max-width: 200px;
+  }
+
+  .custom-button {
+    background-color: rgba(63, 123, 191, 0.3);
+  }
+
+  .button-right {
+    float: right;
+    background-color: rgba(63, 123, 191, 0.3);
+  }
+
+.card-image {
+  display: flex;
+  height: 50%;
+  width: 50%;
+
+.card-cutom {
+  display: flex;
+  height: 300px;
+  width: 150px;
+  justify-content: center;
+  background: blue;
+}
+
+
+
+
+}

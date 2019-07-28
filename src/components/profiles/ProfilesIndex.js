@@ -22,7 +22,7 @@ class Profiles extends React.Component {
       <main className="main-profiles">
         {this.state.profiles.map(profile => (
           <ProfileCard
-            key={profile._id}
+            key={profile.id}
             {...profile}
           />
         ))}

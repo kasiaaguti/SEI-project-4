@@ -12,7 +12,7 @@ class Home extends React.Component {
         <div className="hero-body">
           <div className="container-custom has-text-left">
             <p className="title is-1 has-text-white title-custom">
-              Polish power engeneering industry
+              Polish power engineering industry
             </p>
 
 

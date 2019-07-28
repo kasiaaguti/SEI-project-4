@@ -7,7 +7,7 @@ import Map from './Map'
 
 // mapboxgl.accessToken = process.env.MAPBOX
 
-mapboxgl.accessToken = process.env.MAPBOX
+mapboxgl.accessToken = 
 
 
 

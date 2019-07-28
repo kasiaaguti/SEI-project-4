@@ -12,8 +12,9 @@ class User(db.Model, BaseModel):
     __tablename__ = 'users'
     username = db.Column(db.String(40), nullable=False, unique=True)
     name = db.Column(db.String(40))
-    bio = db.Column(db.String(40))
+    bio = db.Column(db.String(500))
     email = db.Column(db.String(128), nullable=False, unique=True)
+    image = db.Column(db.String(300), nullable=False)
     password_hash = db.Column(db.String(128), nullable=False)
 
     @hybrid_property

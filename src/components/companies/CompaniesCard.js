@@ -15,7 +15,7 @@ const CompaniesCard = ({ name, image, website, id }) => (
         </div>
         <div className="card-content">
 
-          <h5 className="title is-6">{website}</h5>
+      
 
         </div>
       </div>

@@ -16,16 +16,16 @@ class Company(db.Model, BaseModel):
     __tablename__ = 'companies'
 
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(40), nullable=False, unique=True)
+    name = db.Column(db.String(100), nullable=False, unique=True)
     city = db.Column(db.String(300), nullable=False)
     street = db.Column(db.String(300), nullable=False)
     number = db.Column(db.String(300), nullable=False)
     postcode = db.Column(db.String(300), nullable=False)
     website = db.Column(db.String(300), nullable=False)
     image = db.Column(db.String(300), nullable=False)
-    profile = db.Column(db.String(300), nullable=False)
-    lat = db.Column(db.Integer, nullable=False)
-    long = db.Column(db.Integer, nullable=False)
+    profile = db.Column(db.String(500), nullable=False)
+    lat = db.Column(db.Float, nullable=False)
+    long = db.Column(db.Float, nullable=False)
     employees = db.relationship('User', secondary=users_companies, backref='companies')
 
 
