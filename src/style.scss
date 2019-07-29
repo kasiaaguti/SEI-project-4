@@ -15,17 +15,6 @@ html, body {
   width: 100vw;
 }
 
-
-
-
-.wrapper {
-flex: 0 0 80%;
-max-width: 80%;
-}
-.wrapper-2 {
-  position: relative;
-}
-
 // /Users/katarzynawypychewicz/development/projects/SEI-project-4/src/assets/amada.jpg
 .hero-body {
  background-image: url('/assets/hero2.jpg');
@@ -33,6 +22,25 @@ max-width: 80%;
  background-size: cover;
 }
 
+.about-body {
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: 2%;
+}
+
+
+.index-page {
+
+  background-image: url("./assets/parallax.jpg");
+  background-repeat: repeat;
+  background-size: cover;
+  height: 10000px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+}
 
 .container-custom {
       margin-left: 0;
@@ -54,20 +62,13 @@ max-width: 80%;
 }
 
 
-.navbar {
-  background-color: pink;
-}
-
-
-
-
-  //Location and Register Form Titles Styling
+  //Location and Register Form
 
   .newform {
     font-size: 30px;
     font-weight: bold;
     margin: 2% 20%;
-    background-color: rgba(63, 123, 191, 0.3);
+    background-color:  rgba(255,255,255, 0.7);
   }
 
   .user-img {
@@ -84,20 +85,116 @@ max-width: 80%;
     background-color: rgba(63, 123, 191, 0.3);
   }
 
+.parallax {
+  /* The image used */
+  background-image: url("./assets/parallax.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* Set a specific height */
+  height: 1000px;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+}
+
+
+// Cards
 .card-image {
   display: flex;
-  height: 50%;
-  width: 50%;
+  height: 200px;
+  width: 200px;
+  align-self: center;
 
-.card-cutom {
+}
+
+.card-custom {
   display: flex;
-  height: 300px;
-  width: 150px;
+  flex-direction: column;
   justify-content: center;
-  background: blue;
+  margin-top: 15%;
+
+}
+
+
+
+// News
+
+.news {
+
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 700px;
+  margin-left: 200px;
+
+  .news-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 15%;
+
+  }
+
+
+
+
+
+
+}
+
+
+// Show page
+
+.show-page {
+  margin-top: 3%;
+}
+.reviewtexarea {
+  height: 100px;
+  width: 250px;
+  border: 1px solid #B9B9BC;
+}
+
+.comment {
+  display: block;
+
+  width: 250px;
+  border: 1px solid #B9B9BC;
+  margin-bottom: 10px;
+
+}
+
+.date {
+  font-size: 10px;
+}
+
+.employees {
+  display: flex;
+  justify-content: flex-start;
+
+
+}
+.employee-card{
+
+  border: 1px solid #B9B9BC;
+  width: 100px;
+  height: 200px;
+  margin-right: 20px;
+  max-width: 700px;
+
 }
 
 
 
-
-}
+//
+// .one-article {
+//   display: flex;
+//
+// }
+//
+//
+// .image-article {
+//
+// }

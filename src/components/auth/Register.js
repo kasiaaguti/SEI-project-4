@@ -28,17 +28,19 @@ class Register extends React.Component {
   render() {
     console.log(this.state)
     return (
-      <section className="section newform">
-        <div className="container">
-          <form onSubmit={this.handleSubmit}>
+      <section className="parallax">
+        <section className="section newform">
+          <div className="container">
+            <form onSubmit={this.handleSubmit}>
 
 
-            <h2 className="title">Register</h2>
+              <h2 className="title">Register</h2>
 
               <div className="field">
                 <label className="label">Name</label>
                 <div className="control">
                   <input
+                    type="name"
                     className="input"
                     name="name"
                     placeholder="Name"
@@ -54,69 +56,70 @@ class Register extends React.Component {
                   <input
                     className="input"
                     name="username"
-                    placeholder="username"
+                    placeholder="Username"
                     onChange={this.handleChange}
 
                   />
                 </div>
               </div>
 
-            <div className="field">
-              <label className="label">Email</label>
-              <div className="control">
-                <input
-                  className="input"
-                  name="email"
-                  placeholder="Email"
-                  onChange={this.handleChange}
-                />
-              </div>
-            </div>
-
-            <div className="field">
-              <label className="label">Password</label>
-              <div className="control">
-                <input
-                  className="input"
-                  type="password"
-                  name="password"
-                  placeholder="Password"
-                  onChange={this.handleChange}
-                />
+              <div className="field">
+                <label className="label">Email</label>
+                <div className="control">
+                  <input
+                    className="input"
+                    name="email"
+                    placeholder="Email"
+                    onChange={this.handleChange}
+                  />
+                </div>
               </div>
 
-            </div>
+              <div className="field">
+                <label className="label">Password</label>
+                <div className="control">
+                  <input
+                    className="input"
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    onChange={this.handleChange}
+                  />
+                </div>
 
-            <div className="field">
-              <label className="label">Password Confirmation</label>
-              <div className="control">
-                <input
-                  className="input"
-                  type="password"
-                  name="passwordConfirmation"
-                  placeholder="Password Confirmation"
-                  onChange={this.handleChange}
-                />
               </div>
-            </div>
 
-            <div className="field">
-              <label className="label">Bio</label>
-              <div className="control">
-                <input
-                  className="input"
-                  name="bio"
-                  placeholder="bio"
-                  onChange={this.handleChange}
-
-                />
+              <div className="field">
+                <label className="label">Password Confirmation</label>
+                <div className="control">
+                  <input
+                    className="input"
+                    type="password"
+                    name="password_confirmation"
+                    placeholder="Password Confirmation"
+                    onChange={this.handleChange}
+                  />
+                </div>
               </div>
-            </div>
+
+              <div className="field">
+                <label className="label">Bio</label>
+                <div className="control">
+                  <input
+                    className="input"
+                    name="bio"
+                    placeholder="Bio"
+                    onChange={this.handleChange}
+
+                  />
+                </div>
+              </div>
 
 
-            <button type="submit" className="button">Submit</button>
-          </form>
-        </div>
+              <button type="submit" className="button">Submit</button>
+            </form>
+          </div>
+        </section>
       </section>
     )
   }
@@ -124,17 +127,17 @@ class Register extends React.Component {
 
 export default Register
 
-
+{/*
             //
             // <div className="field">
             //   <label className="label">Username</label>
             //   <div className="control">
-            //     <input
-            //       className={`input ${this.state.errors.username ? 'is-danger' : ''}`}
+            //     <input */}
+{/* //       className={`input ${this.state.errors.username ? 'is-danger' : ''}`}
             //       name="username"
             //       placeholder="Username"
             //       onChange={this.handleChange}
             //     />
-            //   </div>
-            //   {this.state.errors.username && <small className="help is-danger">{this.state.errors.username}</small>}
-            // </div>
+            //   </div> */}
+{/* //   {this.state.errors.username && <small className="help is-danger">{this.state.errors.username}</small>}
+            // </div> */}

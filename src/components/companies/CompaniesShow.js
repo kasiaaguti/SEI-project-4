@@ -61,8 +61,9 @@ class CompaniesShow extends React.Component {
   render() {
     if (!this.state.company) return null
     const { company } =  this.state
+    console.log(company)
     return (
-      <main className="section">
+      <main className="section show-page">
         <div className="container">
           <div className="columns">
             <div className="column is-half">
@@ -90,52 +91,87 @@ class CompaniesShow extends React.Component {
               <p>{company.profile}</p>
               <br />
               <h4 className="title is-4">Website</h4>
-              <a href="${company.website}">{company.website}</a>
+              <a href={company.website} target="blank">{company.website}</a>
 
 
+              <br />
+              <br />
+              <h4 className="title is-4">Address</h4>
+              <p>  {company.street} {company.number} </p>
+
+              <p>{company.postcode} {company.city}</p>
               <br />
               <br />
               <h4 className="title is-4">Emloyees</h4>
-              <p>{company.employees.user}</p>
+              <div className="employees">
+                {company.employees.map(user =>
+                  <div className="employee-card" key={user.id}>
 
-    </div>
+                    <Link to={`/users/${user.id}`}>
+                      <p>{user.name}</p>
 
+                      <img src={user.image} alt="user-image"/></Link>
 
-              <div className="column is-half">
-
-                <form onSubmit={this.handleSubmit}>
-                  <div className="field">
-                    <div className="control">
-                      <textarea
-                        className="reviewtexarea"
-                        placeholder="Review"
-                        onChange={this.handleChange}
-                        value={this.state.comment.text || ''}
-                      >
-                      </textarea>
-                    </div>
-                  </div>
-                  <button className="button" type="submit">Submit comment</button>
-                </form>
-
-                {company.comments.map(comment => (
-                  <div key={comment.id}>
-                    <div className="card-content">
-                      {comment.text}
-                    </div>
-
-                    <button
-                      className="button"
-                      onClick={() => this.handleCommentDelete(comment)}
-                    >Delete
-                    </button>
-
-                  </div>
-                ))}
 
 
 
+                  </div>
+
+                )}
               </div>
+
+            </div>
+
+
+
+            <div className="column is-half">
+              <div className="comment">
+                {company.comments.map(comment =>
+                  <div key={comment.id}>
+                    <p >{comment.content}</p>
+
+                    <p> <Link to={`/users/${comment.user.id}`}>  {comment.user.name}</Link></p>
+                    <p className="date">{comment.created_at}</p>
+                  <hr />
+                </div>
+
+                )}
+              </div>
+
+
+              <form onSubmit={this.handleSubmit}>
+                <div className="field">
+                  <div className="control">
+                    <textarea
+                      className="reviewtexarea"
+                      placeholder="Type your comment here"
+                      onChange={this.handleChange}
+                      value={this.state.comment.text || ''}
+                    >
+                    </textarea>
+                  </div>
+                </div>
+                <button className="button" type="submit">Submit comment</button>
+              </form>
+
+              {company.comments.map(comment => (
+                <div key={comment.id}>
+                  <div className="card-content">
+                    {comment.text}
+                  </div>
+
+                  {/* <button
+                    className="button"
+                    onClick={() => this.handleCommentDelete(comment)}
+                  >Delete
+                  </button> */}
+
+                </div>
+              ))}
+
+
+
+            </div>
 
 
 

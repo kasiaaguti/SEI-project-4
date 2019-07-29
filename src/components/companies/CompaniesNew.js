@@ -9,7 +9,7 @@ class CompaniesNew extends React.Component {
     this.state = { data: {} }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
-    this.onRadioChange = this.onRadioChange.bind(this)
+
   }
 
   handleChange({ target: { name, value }}) {
@@ -30,19 +30,19 @@ class CompaniesNew extends React.Component {
 
     axios.post('/api/companies', this.state.data,{
     })
-      .then(() => this.props.history.push('/Companies'))
+      .then(() => this.props.history.push('/companies'))
       .catch(err => console.log(err.response))
   }
 
   render() {
     return (
-      <section className="section">
+      <section className="section parallax">
         <div className="container">
           <CompaniesForm
             data={this.state.data}
             handleChange={this.handleChange}
             handleSubmit={this.handleSubmit}
-            onRadioChange={this.onRadioChange}
+          
           />
         </div>
 

@@ -22,8 +22,21 @@ with app.app_context():
     'password_confirmation': 'pass'
     })
 
+    michal, errors = user_schema.load({
+    'username': 'michal',
+    'name': 'Michal Brucek',
+    'bio': 'I’m driven and enthusiastic professional with business background: I hold MSc in Management from LSE and I have experience launching new cross-border ventures across industries. I’ve always been passionate about technology, what lead me to learn JavaScript, Python and SQL.',
+    'image': 'https://media.licdn.com/dms/image/C4D03AQE2EzsNpW8IpQ/profile-displayphoto-shrink_200_200/0?e=1569456000&v=beta&t=qQ4PH64M4VRRUYSaxFv8GDd8WeKTbTBdXRt3t6O-aZM',
+    'email': 'michal@email',
+    'password': 'pass',
+    'password_confirmation': 'pass'
+    })
+
+
+
     db.session.add_all([
-        kasia
+        kasia,
+        michal
     ])
     # lat=50.2512621,
     # long=19.0516174
@@ -48,12 +61,12 @@ with app.app_context():
     postcode='29-100',
     street='Jedrzejowska',
     number='79c',
-    website='www.zpue.pl',
+    website='http://zpue.com/',
     image='http://elektrosystemy.pl/wp-content/uploads/aktualnosci-rynek/2016/12/07/wiceprezes-abb-moze-zostac-szefem-zpue/ZPUE_4.jpg',
     profile='One of leading electrical switchgear manufacturers, offering medium (MV) and low voltage (LV) solutions, transformer stations containers and more. Founded in 1988',
     lat=50.8473622,
     long=19.9959265,
-    employees=[kasia],)
+    employees=[kasia, michal])
 
     abb = Company(
     name='ABB',
@@ -173,28 +186,28 @@ with app.app_context():
     employees=[],)
 
     zaklad_wykonawstwa_sieci_elektrycznych_rzeszow = Company(
-    name='Zakład Wykonawstwa Sieci Elektrycznych Rzeszów',
+    name='ZWSE',
     city='Rzeszów',
     postcode='35-105',
     street='ul. Przemysłowa',
     number='1',
     website='www.zwse.rzeszow.pl',
     image='http://www.securepro.pl/sites/default/files/securepro_ref_zwse_rzeszow_200px.png',
-    profile='',
+    profile='Zakład Wykonawstwa Sieci Elektrycznych Rzeszów',
     lat=50.0263383,
     long=21.975739,
     employees=[],)
 
 
     wirbet = Company(
-    name='Przedsiębiorstwo Produkcji Strunobetonowych Żerdzi Wirowanych WIRBET',
+    name='WIRBET',
     city='Ostrów Wlkp',
     postcode='63-400',
     street='ul. Chłapowskiego',
     number='51',
     website=' www.wirbet.com.pl',
     image='https://www.radpol.eu/uploads/block/intro/wirbet.jpg',
-    profile='',
+    profile='Przedsiębiorstwo Produkcji Strunobetonowych Żerdzi Wirowanych WIRBET',
     lat=51.64635,
     long=17.77713,
     employees=[],)
@@ -237,30 +250,48 @@ with app.app_context():
 # Comments
 
     comment_one = Comment(
-        content="good products",
+        content="Good products",
+        user=kasia,
         company=elektrobudowa
+
     )
 
     comment_two = Comment(
-        content="very good products",
+        content="What do you think about this company?",
+        user=michal,
         company=zpue
+
+    )
+
+    comment_three = Comment(
+        content="Very good products",
+        user=kasia,
+        company=zpue
+
     )
 
     db.session.add_all([
         comment_one,
-        comment_two
+        comment_two,
+        comment_three
     ])
 
 
 
 # posts
     post_one = Post(
-        content="post1",
+        content="Hi everyone, I hope you like our new webpage",
         user=kasia
         )
 
+    post_two = Post(
+        content="I will be speaking at the E-Mobility Conference in Warsaw this month.",
+        user=michal
+        )
+
     db.session.add_all([
-        post_one
+        post_one,
+        post_two
 
         ])
 

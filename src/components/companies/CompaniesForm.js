@@ -2,6 +2,7 @@ import React from 'react'
 
 
 const CompaniesForm = ({ data, handleChange, handleSubmit }) => (
+  <section className="section newform">
   <form onSubmit={handleSubmit}>
 
     <div className="field">
@@ -76,7 +77,7 @@ const CompaniesForm = ({ data, handleChange, handleSubmit }) => (
 
     <hr />
 
-    
+
 
     <div className="field">
       <label className="label">Image</label>
@@ -90,8 +91,10 @@ const CompaniesForm = ({ data, handleChange, handleSubmit }) => (
         />
       </div>
     </div>
-    <button type="submit" className="button is-info">Submit</button>
+    <button type="submit" className="button">Submit</button>
   </form>
+
+</section>
 )
 
 

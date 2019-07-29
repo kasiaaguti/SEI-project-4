@@ -14,7 +14,7 @@ class User(db.Model, BaseModel):
     name = db.Column(db.String(40))
     bio = db.Column(db.String(500))
     email = db.Column(db.String(128), nullable=False, unique=True)
-    image = db.Column(db.String(300), nullable=False)
+    image = db.Column(db.String(300))
     password_hash = db.Column(db.String(128), nullable=False)
 
     @hybrid_property
@@ -58,7 +58,7 @@ class UserSchema(ma.ModelSchema, BaseSchema):
     password = fields.String(required=True)
     password_confirmation = fields.String(required=True)
 
-    companies = fields.Nested('CompanySchema', many=True, only=('name', 'id'))
+    companies = fields.Nested('CompanySchema', many=True, only=('name', 'id', 'image'))
     posts = fields.Nested('PostSchema', many=True)
 
     class Meta:

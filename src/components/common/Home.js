@@ -1,7 +1,7 @@
 import React from 'react'
 
 import MarkersMap from '/Users/katarzynawypychewicz/development/projects/SEI-project-4/src/components/companies/MarkersMap.js'
-
+import About from './About'
 
 class Home extends React.Component {
 
@@ -14,16 +14,12 @@ class Home extends React.Component {
             <p className="title is-1 has-text-white title-custom">
               Polish power engineering industry
             </p>
-
-
-
-
           </div>
         </div>
+        <MarkersMap />
 
-      <MarkersMap />
-
-</section>
+        <About />
+      </section>
 
 
     )

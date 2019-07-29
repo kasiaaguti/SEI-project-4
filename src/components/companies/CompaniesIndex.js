@@ -19,7 +19,7 @@ class CompaniesIndex extends React.Component {
     if (!this.state.companies) return null
     console.log(this.state.companies)
     return (
-      <section className="section">
+      <section className="section index-page">
         <div className="container">
           <div className="columns is-mobile is-multiline">
             {this.state.companies.map(company => (

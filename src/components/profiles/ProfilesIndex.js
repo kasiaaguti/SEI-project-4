@@ -19,14 +19,18 @@ class Profiles extends React.Component {
   render() {
     if (!this.state.profiles) return null
     return (
-      <main className="main-profiles">
-        {this.state.profiles.map(profile => (
-          <ProfileCard
-            key={profile.id}
-            {...profile}
-          />
-        ))}
-      </main>
+      <section className="section index-page">
+        <div className="container">
+          <div className="columns is-mobile is-multiline">
+            {this.state.profiles.map(profile => (
+              <ProfileCard
+                key={profile.id}
+                {...profile}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
     )
   }
 }

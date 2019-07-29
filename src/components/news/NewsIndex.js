@@ -15,63 +15,77 @@ class NewsIndex extends React.Component {
   }
 
   getNews() {
-    axios.get('https://newsapi.org/v2/everything?q=bitcoin&apiKey=0fc2226545f9457c99378cfe53b9a8e0',
+    axios.get('https://newsapi.org/v2/everything?q=energy&apiKey=0fc2226545f9457c99378cfe53b9a8e0',
       { headers: {
         'Authorization': '0fc2226545f9457c99378cfe53b9a8e0'
+
       }
       })
 
-      .then(res => this.setState({ news: res.data },  () => console.log(this.state.news) ))
+      .then(res => this.setState({ news: res.data.articles },  () => console.log(this.state.news) ))
       .catch(err => console.log(err))
   }
 
 
 
-
   render() {
-
-
+    if (!this.state.news) return null
     return  (
-      <div>
-
-        <h1>kas</h1>
 
 
-      <div>
-        {this.props.news}
-      <p>  {this.getNews()} </p> 
+        <section className="section index-page">
+            <div className="container">
+                <div className="columns is-mobile is-multiline">
+
+     {this.state.news.map((article, i) => (
+            <div key={i}>
+                <div className="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">
+              <div className="card card-custom">
+                <div className="card-header">
+                  <h1 className="card-header-title">{article.title}</h1>
+                </div>
+
+                <figure className="article-iamge">
+                  <img src={article.urlToImage} alt={name} />
+                </figure>
+                <br/>
 
 
+                <div className="card-content">
 
+                  <h3 className="subtitle is-6"><i>
+                    {article.author}</i></h3>
+
+                  <p>{article.description} </p>
+
+                <a href={article.url} target="blank">Go to the article</a>
+
+
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+          ))}
+        </div>
       </div>
 
+      </section>
 
-      </div>
-
-
-
-
-
-
-
-    )
-
-
+)
   }
-
-
-
 }
-
-
-
-
 
 
 
 export default NewsIndex
 //
 //
+    //
+    //
+    //
+    // )
 //
 // componentDidMount(){
 //   axios.get('https://newsapi.org/v2/everything?q=bitcoin&apiKey=0fc2226545f9457c99378cfe53b9a8e0',

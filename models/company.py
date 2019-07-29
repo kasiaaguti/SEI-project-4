@@ -34,7 +34,7 @@ class CompanySchema(ma.ModelSchema, BaseSchema):
         model = Company
 
     comments = fields.Nested('CommentSchema', many=True)
-    employees = fields.Nested('UserSchema', many=True, only=('username', 'id'))
+    employees = fields.Nested('UserSchema', many=True, only=('name', 'id', 'image'))
 
 class Comment(db.Model, BaseModel):
 
@@ -43,8 +43,13 @@ class Comment(db.Model, BaseModel):
     content = db.Column(db.Text, nullable=False)
     company_id = db.Column(db.Integer, db.ForeignKey('companies.id'))
     company = db.relationship('Company', backref='comments')
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    user = db.relationship('User', backref='comments_made')
 
 class CommentSchema(ma.ModelSchema, BaseSchema):
 
     class Meta:
         model = Comment
+
+    user = fields.Nested('UserSchema')
+    company = fields.Nested('CompanySchema', only=('id', 'name'))

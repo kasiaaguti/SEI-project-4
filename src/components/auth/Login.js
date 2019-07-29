@@ -55,7 +55,8 @@ class Login extends React.Component {
 
   render() {
     return (
-      <main className="section newform">
+<section className="parallax">
+      <section className="section newform">
         <div className="container">
           <form onSubmit={this.handleSubmit}>
 
@@ -92,7 +93,9 @@ class Login extends React.Component {
             <button type="submit" className="button">Login</button>
           </form>
         </div>
-      </main>
+      </section>
+        </section>
+
     )
   }
 }
