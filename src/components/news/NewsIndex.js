@@ -17,7 +17,7 @@ class NewsIndex extends React.Component {
   getNews() {
     axios.get('https://newsapi.org/v2/everything?q=energy&apiKey=0fc2226545f9457c99378cfe53b9a8e0',
       { headers: {
-        'Authorization': '0fc2226545f9457c99378cfe53b9a8e0'
+        'Authorization': process.env.NEWS
 
       }
       })
@@ -34,7 +34,7 @@ class NewsIndex extends React.Component {
       <section className="section index-page">
         <div className="container">
           <div className="columns is-mobile is-multiline">
-            
+
             {this.state.news.map((article, i) => (
               <div key={i} className="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">
                 <div className="card card-custom">

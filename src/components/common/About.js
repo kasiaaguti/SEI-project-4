@@ -13,7 +13,7 @@ class About extends React.Component {
               About us
             </p>
             <p> We're a hub for people interested in power engineering. We are focused mostly on Poland, but we remember how important it is to know what's going on. This is why we bring to you the most recent energy related news from all over the world. We connect companies and humans, because we believe that together, we can work towards green energy and green future. </p>
-      
+
 
 
 
