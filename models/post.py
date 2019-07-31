@@ -17,6 +17,7 @@ class Post(db.Model, BaseModel):
 class PostSchema(ma.ModelSchema, BaseSchema):
 
     user = fields.Nested('UserSchema', only=('username', 'id'))
+    comments = fields.Nested('PostcommentSchema', many=True, only=('id', 'content', 'user'))
 
     class Meta:
         model = Post
@@ -28,7 +29,7 @@ class Postcomment(db.Model, BaseModel):
 
     content = db.Column(db.Text, nullable=False)
     post_id = db.Column(db.Integer, db.ForeignKey('posts.id'))
-    post = db.relationship('Post', backref='posts')
+    post = db.relationship('Post', backref='comments')
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     user = db.relationship('User', backref='postcomments')
 

@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify, request
+from flask import Blueprint, jsonify, request, g
 from models.company import Company, CompanySchema, Comment, CommentSchema
 from lib.secure_route import secure_route
 
@@ -53,6 +53,7 @@ def delete(company_id):
     return '', 204
 
 @api.route('/companies/<int:company_id>/comments', methods=['POST'])
+@secure_route
 def comment_create(company_id):
     company = Company.query.get(company_id)
     if not company:
@@ -62,6 +63,7 @@ def comment_create(company_id):
     if errors:
         return jsonify(errors), 422
     comment.company = company
+    comment.user = g.current_user
     comment.save()
     return comment_schema.jsonify(comment), 202
 

@@ -10,7 +10,7 @@ class CompaniesShow extends React.Component {
     this.state = { company: null,  comment: {}, employees: {}  }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
-    this.handleCommentDelete = this.handleCommentDelete.bind(this)
+
   }
 
 
@@ -25,9 +25,8 @@ class CompaniesShow extends React.Component {
       .catch(err => console.log(err))
   }
 
-
   handleChange(e) {
-    this.setState({ comment: { text: e.target.value } })
+    this.setState({ comment: { content: e.target.value } })
   }
 
   handleSubmit(e) {
@@ -40,17 +39,10 @@ class CompaniesShow extends React.Component {
       .catch(err => console.log(err))
   }
 
-  handleCommentDelete(comment) {
-    axios.delete(`/api/companies/${this.props.match.params.id}/comments/${comment._id}`, {
-      headers: { 'Authorization': Auth.getToken() }
-    })
-      .then(() => this.getData())
-      .catch(err => console.log(err))
+  isOwner() {
+    return Auth.getPayload().sub === parseInt(this.props.match.params.id)
   }
 
-  isOwner() {
-    return Auth.getPayload().sub === this.state.location.user
-  }
 
   isOwnerComment(comment) {
     return Auth.getPayload().sub === comment.user
@@ -132,8 +124,8 @@ class CompaniesShow extends React.Component {
 
                     <p> <Link to={`/users/${comment.user.id}`}>  {comment.user.name}</Link></p>
                     <p className="date">{comment.created_at}</p>
-                  <hr />
-                </div>
+                    <hr />
+                  </div>
 
                 )}
               </div>
@@ -146,7 +138,7 @@ class CompaniesShow extends React.Component {
                       className="reviewtexarea"
                       placeholder="Type your comment here"
                       onChange={this.handleChange}
-                      value={this.state.comment.text || ''}
+                      value={this.state.comment.content || ''}
                     >
                     </textarea>
                   </div>
@@ -157,14 +149,10 @@ class CompaniesShow extends React.Component {
               {company.comments.map(comment => (
                 <div key={comment.id}>
                   <div className="card-content">
-                    {comment.text}
+                    {comment.content}
                   </div>
 
-                  {/* <button
-                    className="button"
-                    onClick={() => this.handleCommentDelete(comment)}
-                  >Delete
-                  </button> */}
+
 
                 </div>
               ))}
@@ -193,9 +181,6 @@ class CompaniesShow extends React.Component {
 
 
 export default CompaniesShow
-
-
-
 //
 // {company.employees.map(user => (
 //   <div key={user.id}>

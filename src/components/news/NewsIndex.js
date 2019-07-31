@@ -31,49 +31,37 @@ class NewsIndex extends React.Component {
   render() {
     if (!this.state.news) return null
     return  (
+      <section className="section index-page">
+        <div className="container">
+          <div className="columns is-mobile is-multiline">
+            
+            {this.state.news.map((article, i) => (
+              <div key={i} className="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">
+                <div className="card card-custom">
+                  <div className="card-header">
+                    <h1 className="card-header-title">{article.title}</h1>
+                  </div>
+
+                  <figure className="article-iamge">
+                    <img src={article.urlToImage} alt={name} />
+                  </figure>
+                  <br/>
 
 
-        <section className="section index-page">
-            <div className="container">
-                <div className="columns is-mobile is-multiline">
-
-     {this.state.news.map((article, i) => (
-            <div key={i}>
-                <div className="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">
-              <div className="card card-custom">
-                <div className="card-header">
-                  <h1 className="card-header-title">{article.title}</h1>
-                </div>
-
-                <figure className="article-iamge">
-                  <img src={article.urlToImage} alt={name} />
-                </figure>
-                <br/>
-
-
-                <div className="card-content">
-
-                  <h3 className="subtitle is-6"><i>
-                    {article.author}</i></h3>
-
-                  <p>{article.description} </p>
-
-                <a href={article.url} target="blank">Go to the article</a>
-
+                  <div className="card-content">
+                    <h3 className="subtitle is-6"><i>
+                      {article.author}</i></h3>
+                    <p>{article.description} </p>
+                    <a href={article.url} target="blank">Go to the article</a>
+                  </div>
 
                 </div>
               </div>
-
-
-            </div>
+            ))}
           </div>
-          ))}
         </div>
-      </div>
-
       </section>
-
-)
+    )
   }
 }
 
@@ -85,7 +73,7 @@ export default NewsIndex
     //
     //
     //
-    // )
+        // )
 //
 // componentDidMount(){
 //   axios.get('https://newsapi.org/v2/everything?q=bitcoin&apiKey=0fc2226545f9457c99378cfe53b9a8e0',

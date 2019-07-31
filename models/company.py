@@ -21,11 +21,11 @@ class Company(db.Model, BaseModel):
     street = db.Column(db.String(300), nullable=False)
     number = db.Column(db.String(300), nullable=False)
     postcode = db.Column(db.String(300), nullable=False)
-    website = db.Column(db.String(300), nullable=False)
-    image = db.Column(db.String(300), nullable=False)
-    profile = db.Column(db.String(500), nullable=False)
-    lat = db.Column(db.Float, nullable=False)
-    long = db.Column(db.Float, nullable=False)
+    website = db.Column(db.String(300))
+    image = db.Column(db.String(600))
+    profile = db.Column(db.String(900))
+    lat = db.Column(db.Float)
+    long = db.Column(db.Float)
     employees = db.relationship('User', secondary=users_companies, backref='companies')
 
 

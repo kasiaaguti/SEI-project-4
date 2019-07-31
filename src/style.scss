@@ -103,10 +103,13 @@ html, body {
 
 // Cards
 .card-image {
-  display: flex;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   height: 200px;
   width: 200px;
-  align-self: center;
+
+
 
 }
 
@@ -115,33 +118,6 @@ html, body {
   flex-direction: column;
   justify-content: center;
   margin-top: 15%;
-
-}
-
-
-
-// News
-
-.news {
-
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  width: 700px;
-  margin-left: 200px;
-
-  .news-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: 15%;
-
-  }
-
-
-
-
-
 
 }
 
