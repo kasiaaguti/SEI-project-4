@@ -25,7 +25,7 @@ class MarkersMap extends React.Component {
   getCompaniesList() {
     axios.get('/api/companies')
       .then(res => {
-        this.setState({ points: res.data },() => console.log(this.state.points))
+        this.setState({ points: res.data })
       })
       .catch(err => console.log(err))
   }

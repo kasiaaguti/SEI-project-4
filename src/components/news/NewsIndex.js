@@ -22,7 +22,7 @@ class NewsIndex extends React.Component {
       }
       })
 
-      .then(res => this.setState({ news: res.data.articles },  () => console.log(this.state.news) ))
+      .then(res => this.setState({ news: res.data.articles }))
       .catch(err => console.log(err))
   }
 
@@ -68,12 +68,8 @@ class NewsIndex extends React.Component {
 
 
 export default NewsIndex
-//
-//
-    //
-    //
-    //
-        // )
+
+
 //
 // componentDidMount(){
 //   axios.get('https://newsapi.org/v2/everything?q=bitcoin&apiKey=0fc2226545f9457c99378cfe53b9a8e0',

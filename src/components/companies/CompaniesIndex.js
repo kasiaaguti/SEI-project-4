@@ -17,7 +17,6 @@ class CompaniesIndex extends React.Component {
 
   render() {
     if (!this.state.companies) return null
-    console.log(this.state.companies)
     return (
       <section className="section index-page">
         <div className="container">
