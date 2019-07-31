@@ -1,12 +1,7 @@
 import React from 'react'
 import mapboxgl from 'mapbox-gl'
-import MarkersMap from './MarkersMap'
-
-console.log(process.env.MAPBOX)
 
 mapboxgl.accessToken = process.env.MAPBOX
-
-
 
 class Map extends React.Component {
   constructor() {
