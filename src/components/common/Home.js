@@ -1,6 +1,6 @@
 import React from 'react'
 
-import MarkersMap from '/Users/katarzynawypychewicz/development/projects/SEI-project-4/src/components/companies/MarkersMap.js'
+import MarkersMap from '../companies/MarkersMap.js'
 import About from './About'
 
 class Home extends React.Component {
