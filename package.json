@@ -8,6 +8,7 @@
     "serve:front": "webpack-dev-server --mode=development",
     "serve:back": "pipenv run flask run",
     "seed": "pipenv run python seeds.py",
+    "postinstall": "[ \"$NODE_ENV\" = \"production\" ] && yarn build || exit 0",
     "build": "webpack -p"
   },
   "author": "",
