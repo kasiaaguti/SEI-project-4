@@ -63,10 +63,11 @@ Thanks to newsapi.org public API this website can provide newest sector related 
 <br />
 <img src="src/assets/map.png" width="900">
 
-**Responsive design: companies list, company profile, user profile**
+**Responsive design: companies list and company profile**
 <br />
-<img src="src/assets/user.png" width="400">
-<img src="src/assets/profile.png" width="400">
+<img src="src/assets/user.png" width="300">
+
+<img src="src/assets/profile.png" width="300">
 
 
 ## Code - backend
