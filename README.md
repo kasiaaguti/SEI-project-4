@@ -1,7 +1,7 @@
 ![ga_cog_large_red_rgb](https://cloud.githubusercontent.com/assets/40461/8183776/469f976e-1432-11e5-8199-6ac91363302b.png)
 ​
 # General Assembly – Project 4
-This was the second project during the General Assembly Software Engineering Immersive course (Week 12).
+This was the fourth project during the General Assembly Software Engineering Immersive course (Week 12).
 
 ## Brief
 * Build a full-stack application.
@@ -135,7 +135,7 @@ handleSubmit(e) {
 
 **Landing page**
 
-
+a
 <img src="src/assets/home.png" width="900">
 
 **Page using news public API to show sector related information**
