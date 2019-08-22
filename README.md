@@ -48,21 +48,26 @@ Thanks to newsapi.org public API this website can provide newest sector related 
 ## Visuals
 
 **Landing page**
+<br />
 <img src="src/assets/home.png" width="900">
 
 **Page using news public API to show sector related information**
+<br />
 <img src="src/assets/news.png" width="900">
 
 **Login page**
+<br />
 <img src="src/assets/login.png" width="900">
 
 **Map with markers showing companies locations**
+<br />
 <img src="src/assets/map.png" width="900">
 
 **Responsive design: companies list, company profile, user profile**
-<img src="src/assets/user.png" width="200">
-<img src="src/assets/profile.png" width="200">
-<img src="src/assets/res.png" width="200">
+<br />
+<img src="src/assets/user.png" width="400">
+<img src="src/assets/profile.png" width="400">
+
 
 ## Code - backend
 
