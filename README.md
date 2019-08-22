@@ -134,27 +134,34 @@ handleSubmit(e) {
 ## Visuals
 
 **Landing page**
-<br />
+
+
 <img src="src/assets/home.png" width="900">
 
 **Page using news public API to show sector related information**
-<br />
+
+
 <img src="src/assets/news.png" width="900">
 
 **Login page**
-<br />
+
+
 <img src="src/assets/login.png" width="900">
 
 **Map with markers showing companies locations**
-<br />
+
+
 <img src="src/assets/map.png" width="900">
 
+
 **Responsive design: user profile**
-<br />
+
+
 <img src="src/assets/user.png" width="300">
 
 **Responsive design: company profile**
-<br />
+
+
 <img src="src/assets/profile.png" width="300">
 
 
