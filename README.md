@@ -17,6 +17,7 @@ This was the fourth project during the General Assembly Software Engineering Imm
 ## Built With
 * PostgreSQL
 * Python
+* Flask
 * Insomnia
 * React
 * Axios
