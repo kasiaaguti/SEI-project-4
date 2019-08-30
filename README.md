@@ -166,17 +166,23 @@ a
 <img src="src/assets/profile.png" width="300">
 
 
+## Wins
+
+I used Mapbox to show the locations of all companies listed on the website. As Mapbox doesn’t use addresses, but only geographical coordinates I added latitude and longitude for all companies while creating a seed file. It wouldn’t be user friendly to  ask our users to do the same when adding their companies, so I used mapbox function which allows to convert new addresses into geographic coordinates.
+
+
 ## Challenges
 
 It was challenging to do the whole full-stack project myself in only one week, but also allowed me to get to know all parts of the process.  
 
-I used Mapbox to show the locations of all companies listed on the website. As Mapbox doesn’t use addresses, but only geographical coordinates I added latitude and longitude for all companies while creating a seed file. It wouldn’t be user friendly to  ask our users to do the same when adding their companies, so I used mapbox function which allows to convert new addresses into geographic coordinates.
 
 ## Future improvements
 
 Next stage of developing this website would be adding private messages functionality.
 
-Improving graphics.
+Improving user experience & graphics.
 
 ## Key learnings
-Building a functioning full-stack app where requests can successfully display information on the front end (read) and data can be created/updated/deleted on the back end
+Building a functioning full-stack app where requests can successfully display information on the front end (read) and data can be created/updated/deleted on the back end.
+
+Practicing React and having first experience of working with Python and PostgreSQL.
